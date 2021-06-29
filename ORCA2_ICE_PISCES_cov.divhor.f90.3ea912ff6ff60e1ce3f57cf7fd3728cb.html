@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>GCC Code Coverage Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="ORCA2_ICE_PISCES_cov.css">
+  </head>
+
+  <body>
+    <h1>GCC Code Coverage Report</h1>
+
+    <hr/>
+
+    <div class="summary">
+<div>
+  <table class="legend">
+    <tr>
+      <th scope="row">Directory:</th>
+      <td>./</td>
+    </tr>
+    <tr>
+      <th scope="row">File:</th>
+      <td>cfgs/ORCA2_ICE_PISCES/BLD/ppsrc/nemo/divhor.f90</td>
+    </tr>
+    <tr>
+      <th scope="row">Date:</th>
+      <td>2021-06-29 10:28:54</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table class="coverage">
+    <tr>
+      <th></th>
+      <th scope="col">Exec</th>
+      <th scope="col">Total</th>
+      <th scope="col">Coverage</th>
+    </tr>
+    <tr>
+      <th scope="row">Lines:</th>
+      <td>16</td>
+      <td>16</td>
+      <td class="coverage-high">100.0%</td>
+    </tr>
+    <tr>
+      <th scope="row">Branches:</th>
+      <td>26</td>
+      <td>32</td>
+      <td class="coverage-medium">81.2%</td>
+    </tr>
+  </table>
+</div>
+    </div>
+
+    <hr/>
+
+<div class="file-source">
+  <table>
+    <tr>
+      <th align="right">Line</th>
+      <th align="right">Branch</th>
+      <th align="right">Exec</th>
+      <th align="left">Source</th>
+    </tr>
+
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l1" href="#l1">1</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">MODULE </span><span class="n">divhor</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l2" href="#l2">2</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!==============================================================================</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l3" href="#l3">3</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!                       ***  MODULE  divhor  ***</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l4" href="#l4">4</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! Ocean diagnostic variable : now horizontal divergence</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l5" href="#l5">5</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!==============================================================================</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l6" href="#l6">6</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! History :  1.0  ! 2002-09  (G. Madec, E. Durand)  Free form, F90</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l7" href="#l7">7</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2005-01  (J. Chanut) Unstructured open boundaries</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l8" href="#l8">8</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2003-08  (G. Madec)  merged of cur and div, free form, F90</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l9" href="#l9">9</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2005-01  (J. Chanut, A. Sellar) unstructured open boundaries</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l10" href="#l10">10</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!            3.3  ! 2010-09  (D.Storkey and E.O&#39;Dea) bug fixes for BDY module</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l11" href="#l11">11</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2010-10  (R. Furner, G. Madec) runoff and cla added directly here</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l12" href="#l12">12</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!            3.7  ! 2014-01  (G. Madec) suppression of velocity curl from in-core memory</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l13" href="#l13">13</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2014-12  (G. Madec) suppression of cross land advection option</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l14" href="#l14">14</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!             -   ! 2015-10  (G. Madec) add velocity and rnf flag in argument of div_hor</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l15" href="#l15">15</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l16" href="#l16">16</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l17" href="#l17">17</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l18" href="#l18">18</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!   div_hor    : Compute the horizontal divergence field</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l19" href="#l19">19</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l20" href="#l20">20</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">oce</span>             <span class="c">! ocean dynamics and tracers</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l21" href="#l21">21</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">dom_oce</span>         <span class="c">! ocean space and time domain</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l22" href="#l22">22</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">sbc_oce</span><span class="p">,</span> <span class="n">ONLY</span> <span class="p">:</span> <span class="n">ln_rnf</span>      <span class="c">! river runoff</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l23" href="#l23">23</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">sbcrnf</span> <span class="p">,</span> <span class="n">ONLY</span> <span class="p">:</span> <span class="n">sbc_rnf_div</span> <span class="c">! river runoff </span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l24" href="#l24">24</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">isf_oce</span><span class="p">,</span> <span class="n">ONLY</span> <span class="p">:</span> <span class="n">ln_isf</span>      <span class="c">! ice shelf</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l25" href="#l25">25</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">isfhdiv</span><span class="p">,</span> <span class="n">ONLY</span> <span class="p">:</span> <span class="n">isf_hdiv</span>    <span class="c">! ice shelf</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l26" href="#l26">26</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l27" href="#l27">27</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l28" href="#l28">28</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l29" href="#l29">29</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l30" href="#l30">30</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">in_out_manager</span>  <span class="c">! I/O manager</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l31" href="#l31">31</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">lbclnk</span>          <span class="c">! ocean lateral boundary conditions (or mpp link)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l32" href="#l32">32</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">lib_mpp</span>         <span class="c">! MPP library</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l33" href="#l33">33</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">USE </span><span class="n">timing</span>          <span class="c">! Timing</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l35" href="#l35">35</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="k">IMPLICIT NONE</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l36" href="#l36">36</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">   PRIVATE</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l37" href="#l37">37</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l38" href="#l38">38</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">   PUBLIC   </span><span class="n">div_hor</span>    <span class="c">! routine called by step.F90 and istate.F90</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l39" href="#l39">39</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l40" href="#l40">40</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! * Substitutions</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l41" href="#l41">41</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l42" href="#l42">42</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l43" href="#l43">43</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l44" href="#l44">44</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l45" href="#l45">45</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l47" href="#l47">47</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l48" href="#l48">48</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!                    ***  domzgr_substitute.h90   ***</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!! ** purpose :   substitute fsdep. and fse.., the vert. depth and scale</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!      factors depending on the vertical coord. used, using CPP macro.</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l57" href="#l57">57</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l58" href="#l58">58</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!! History :  4.2  !  2020-02  (S. Techene, G. Madec)  star coordinate</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l59" href="#l59">59</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l60" href="#l60">60</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!! NEMO/OCE 4.2 , NEMO Consortium (2020)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l61" href="#l61">61</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!! $Id$</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l62" href="#l62">62</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!! Software governed by the CeCILL license (see ./LICENSE)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l63" href="#l63">63</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l64" href="#l64">64</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l65" href="#l65">65</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l66" href="#l66">66</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l67" href="#l67">67</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l68" href="#l68">68</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l69" href="#l69">69</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! NEMO/OCE 4.0 , NEMO Consortium (2018)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l70" href="#l70">70</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! $Id: divhor.F90 15058 2021-06-25 09:15:15Z clem $ </span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l71" href="#l71">71</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!! Software governed by the CeCILL license (see ./LICENSE)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l73" href="#l73">73</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">CONTAINS</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l74" href="#l74">74</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l75" href="#l75">75</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine"><span class="k">   SUBROUTINE </span><span class="n">div_hor</span><span class="p">(</span> <span class="n">kt</span><span class="p">,</span> <span class="n">Kbb</span><span class="p">,</span> <span class="n">Kmm</span> <span class="p">)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l76" href="#l76">76</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l77" href="#l77">77</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!                  ***  ROUTINE div_hor  ***</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l78" href="#l78">78</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!                    </span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l79" href="#l79">79</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!! ** Purpose :   compute the horizontal divergence at now time-step</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l80" href="#l80">80</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l81" href="#l81">81</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!! ** Method  :   the now divergence is computed as :</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l82" href="#l82">82</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!         hdiv = 1/(e1e2t*e3t) ( di[e2u*e3u un] + dj[e1v*e3v vn] )</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l83" href="#l83">83</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!      and correct with runoff inflow (div_rnf) and cross land flow (div_cla) </span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l84" href="#l84">84</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l85" href="#l85">85</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!! ** Action  : - update hdiv, the now horizontal divergence</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l86" href="#l86">86</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l87" href="#l87">87</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span>   <span class="n">kt</span>        <span class="c">! ocean time-step index</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l88" href="#l88">88</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span>   <span class="n">Kbb</span><span class="p">,</span> <span class="n">Kmm</span>  <span class="c">! ocean time level indices</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l89" href="#l89">89</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l90" href="#l90">90</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="kt">INTEGER</span>  <span class="kd">::</span>   <span class="n">ji</span><span class="p">,</span> <span class="n">jj</span><span class="p">,</span> <span class="n">jk</span>    <span class="c">! dummy loop indices</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l91" href="#l91">91</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!!----------------------------------------------------------------------</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l92" href="#l92">92</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l93" href="#l93">93</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 12 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">ln_timing</span> <span class="p">)</span>   <span class="k">CALL </span><span class="n">timing_start</span><span class="p">(</span><span class="s1">&#39;div_hor&#39;</span><span class="p">)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l94" href="#l94">94</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l95" href="#l95">95</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">kt</span> <span class="o">==</span> <span class="n">nit000</span> <span class="p">)</span> <span class="k">THEN</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l96" href="#l96">96</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 6 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="k">         IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span> <span class="n">l_istiled</span> <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">ntile</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>  <span class="k">THEN</span>                       <span class="c">! Do only on the first tile</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l97" href="#l97">97</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine">            <span class="k">IF</span><span class="p">(</span><span class="n">lwp</span><span class="p">)</span> <span class="k">WRITE</span><span class="p">(</span><span class="n">numout</span><span class="p">,</span><span class="o">*</span><span class="p">)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l98" href="#l98">98</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine">            <span class="k">IF</span><span class="p">(</span><span class="n">lwp</span><span class="p">)</span> <span class="k">WRITE</span><span class="p">(</span><span class="n">numout</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;div_hor : horizontal velocity divergence &#39;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l99" href="#l99">99</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine">            <span class="k">IF</span><span class="p">(</span><span class="n">lwp</span><span class="p">)</span> <span class="k">WRITE</span><span class="p">(</span><span class="n">numout</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;~~~~~~~   &#39;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l100" href="#l100">100</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">         <span class="n">ENDIF</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l101" href="#l101">101</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">6/6</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 186 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 27900 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 186 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 3403800 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 27900 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">3431892</td>
+      <td class="src coveredLine">         <span class="k">DO </span><span class="n">jk</span> <span class="o">=</span>  <span class="mi">1</span><span class="p">,</span>  <span class="n">jpk</span>  <span class="p">;</span> <span class="k">DO </span><span class="n">jj</span> <span class="o">=</span> <span class="n">ntsj</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">nthb</span><span class="p">),</span> <span class="n">ntej</span><span class="o">+</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">ntht</span><span class="p">)</span> <span class="p">;</span> <span class="k">DO </span><span class="n">ji</span> <span class="o">=</span> <span class="n">ntsi</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">nthl</span><span class="p">),</span> <span class="n">ntei</span><span class="o">+</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">nthr</span><span class="p">)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l102" href="#l102">102</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3431700</td>
+      <td class="src coveredLine">            <span class="n">hdiv</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0._wp</span>    <span class="c">! initialize hdiv for the halos at the first time step</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l103" href="#l103">103</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">         <span class="k">END DO</span> <span class="p">;</span> <span class="k">END DO</span> <span class="p">;</span> <span class="k">END DO</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l104" href="#l104">104</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">      </span><span class="n">ENDIF</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l105" href="#l105">105</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l106" href="#l106">106</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">6/6</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 360 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 53640 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 360 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 6490440 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 53640 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">6544452</td>
+      <td class="src coveredLine">      <span class="k">DO </span><span class="n">jk</span> <span class="o">=</span>  <span class="mi">1</span><span class="p">,</span>  <span class="n">jpkm1</span>  <span class="p">;</span> <span class="k">DO </span><span class="n">jj</span> <span class="o">=</span> <span class="n">ntsj</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">nthb</span><span class="p">),</span> <span class="n">ntej</span><span class="o">+</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">ntht</span><span class="p">)</span> <span class="p">;</span> <span class="k">DO </span><span class="n">ji</span> <span class="o">=</span> <span class="n">ntsi</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">nn_hls</span><span class="p">)</span><span class="o">*</span><span class="n">nthl</span><span class="p">),</span> <span class="n">ntei</span><span class="o">+</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">-</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">+</span> <span class="n">nn_hls</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">nthr</span><span class="p">)</span>                                          <span class="c">!==  Horizontal divergence  ==!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l107" href="#l107">107</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">         <span class="c">! round brackets added to fix the order of floating point operations</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l108" href="#l108">108</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">         <span class="c">! needed to ensure halo 1 - halo 2 compatibility</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l109" href="#l109">109</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">         <span class="n">hdiv</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span>  <span class="p">(</span> <span class="n">e2u</span><span class="p">(</span><span class="n">ji</span>  <span class="p">,</span><span class="n">jj</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">e3u_0</span><span class="p">(</span><span class="n">ji</span>  <span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1._wp</span><span class="o">+</span><span class="n">r3u</span><span class="p">(</span><span class="n">ji</span>  <span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span><span class="o">*</span><span class="nb">umask</span><span class="p">(</span><span class="n">ji</span>  <span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)))</span> <span class="o">*</span> <span class="n">uu</span><span class="p">(</span><span class="n">ji</span>  <span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span>     <span class="p">&amp;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l110" href="#l110">110</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">            <span class="p">&amp;</span>                <span class="o">-</span> <span class="n">e2u</span><span class="p">(</span><span class="n">ji</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jj</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">e3u_0</span><span class="p">(</span><span class="n">ji</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1._wp</span><span class="o">+</span><span class="n">r3u</span><span class="p">(</span><span class="n">ji</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span><span class="o">*</span><span class="nb">umask</span><span class="p">(</span><span class="n">ji</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)))</span> <span class="o">*</span> <span class="n">uu</span><span class="p">(</span><span class="n">ji</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span>     <span class="p">&amp;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l111" href="#l111">111</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">            <span class="p">&amp;</span>                <span class="p">)</span>                                                             <span class="p">&amp;</span> <span class="c">! bracket for halo 1 - halo 2 compatibility</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l112" href="#l112">112</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">            <span class="p">&amp;</span>              <span class="o">+</span> <span class="p">(</span> <span class="n">e1v</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span>  <span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">e3v_0</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span>  <span class="p">,</span><span class="n">jk</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1._wp</span><span class="o">+</span><span class="n">r3v</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span>  <span class="p">,</span><span class="n">Kmm</span><span class="p">)</span><span class="o">*</span><span class="n">vmask</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span>  <span class="p">,</span><span class="n">jk</span><span class="p">)))</span> <span class="o">*</span> <span class="n">vv</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span>  <span class="p">,</span><span class="n">jk</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span>     <span class="p">&amp;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l113" href="#l113">113</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">            <span class="p">&amp;</span>                <span class="o">-</span> <span class="n">e1v</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">e3v_0</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1._wp</span><span class="o">+</span><span class="n">r3v</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span><span class="o">*</span><span class="n">vmask</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jk</span><span class="p">)))</span> <span class="o">*</span> <span class="n">vv</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">jk</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span>     <span class="p">&amp;</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l114" href="#l114">114</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">            <span class="p">&amp;</span>                <span class="p">)</span>                                                             <span class="p">&amp;</span> <span class="c">! bracket for halo 1 - halo 2 compatibility</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l115" href="#l115">115</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6544080</td>
+      <td class="src coveredLine">            <span class="p">&amp;</span>             <span class="p">)</span>  <span class="o">*</span> <span class="n">r1_e1e2t</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">e3t_0</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1._wp</span><span class="o">+</span><span class="n">r3t</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">Kmm</span><span class="p">)</span><span class="o">*</span><span class="n">tmask</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">jj</span><span class="p">,</span><span class="n">jk</span><span class="p">)))</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l116" href="#l116">116</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="k">END DO</span> <span class="p">;</span> <span class="k">END DO</span> <span class="p">;</span> <span class="k">END DO</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l117" href="#l117">117</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l118" href="#l118">118</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 12 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">ln_rnf</span> <span class="p">)</span>   <span class="k">CALL </span><span class="n">sbc_rnf_div</span><span class="p">(</span> <span class="n">hdiv</span><span class="p">,</span> <span class="n">Kmm</span> <span class="p">)</span>                               <span class="c">!==  runoffs    ==!   (update hdiv field)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l119" href="#l119">119</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l120" href="#l120">120</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l121" href="#l121">121</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l122" href="#l122">122</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l123" href="#l123">123</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l124" href="#l124">124</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">ln_isf</span> <span class="p">)</span>                      <span class="k">CALL </span><span class="n">isf_hdiv</span><span class="p">(</span> <span class="n">kt</span><span class="p">,</span> <span class="n">Kmm</span><span class="p">,</span> <span class="n">hdiv</span> <span class="p">)</span>           <span class="c">!==  ice shelf         ==!   (update hdiv field)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l125" href="#l125">125</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l126" href="#l126">126</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 12 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">nn_hls</span><span class="o">==</span><span class="mi">1</span> <span class="p">)</span>   <span class="k">CALL </span><span class="n">lbc_lnk</span><span class="p">(</span> <span class="s1">&#39;divhor&#39;</span><span class="p">,</span> <span class="n">hdiv</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="mf">1.0_wp</span> <span class="p">)</span>   <span class="c">!   (no sign change)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l127" href="#l127">127</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!                                                               ! needed for ww in sshwzv</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l128" href="#l128">128</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 12 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">      <span class="k">IF</span><span class="p">(</span> <span class="n">ln_timing</span> <span class="p">)</span>   <span class="k">CALL </span><span class="n">timing_stop</span><span class="p">(</span><span class="s1">&#39;div_hor&#39;</span><span class="p">)</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l129" href="#l129">129</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">      <span class="c">!</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l130" href="#l130">130</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine">   <span class="k">END SUBROUTINE </span><span class="n">div_hor</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l131" href="#l131">131</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l132" href="#l132">132</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src ">   <span class="c">!!======================================================================</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l133" href="#l133">133</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">END MODULE </span><span class="n">divhor</span></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l134" href="#l134">134</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+    <tr class="source-line">
+      <td class="lineno"><a id="l135" href="#l135">135</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+
+  </table>
+</div>
+
+    <hr/>
+
+    <footer>
+      Generated by: <a href="http://gcovr.com">GCOVR (Version 5.0)</a>
+    </footer>
+  </body>
+</html>
